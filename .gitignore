@@ -70,6 +70,18 @@ ffplay
 *.ocr.log
 outputs/
 
+# Non-Docker startup scripts & process manager
+start.ps1
+start.sh
+switch-mode.ps1
+switch-mode.sh
+ecosystem.config.js
+
+# Docker & SSL
+docker-compose.override.yml
+ssl/
+.docker/
+
 # User documents (tenant data, uploads)
 documents/*/
 !documents/.gitkeep
