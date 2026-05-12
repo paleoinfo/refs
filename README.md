@@ -173,5 +173,4 @@ refs/
 - Il rate limiter impedisce abusi con troppi login simultanei per singolo utente.
 - I documenti degli utenti sono isolati per cartella e non accessibili cross-tenant.
 
----
-Creato con ❤️ da Antigravity
+
