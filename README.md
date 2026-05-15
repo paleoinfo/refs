@@ -22,22 +22,27 @@ L'applicazione integra un sistema di autenticazione **SSO (Single Sign-On)** con
 - [Docker](https://www.docker.com/products/docker-desktop)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-#### Avvio
-
+#### Avvio in Produzione
 1. Clona la repository:
    ```bash
    git clone https://github.com/paleoinfo/refs.git
    cd refs
    ```
-2. Copia il file di configurazione:
+2. Copia il file di configurazione di produzione:
    ```bash
    cp .env.example .env
    ```
-3. Configura le variabili in `.env` (vedi sezione [Configurazione](#️-configurazione)).
+3. Configura le variabili in `.env` (obbligatorio impostare `JWT_SECRET`).
 4. Avvia l'applicazione:
    ```bash
    docker-compose up -d
    ```
+
+#### Avvio in Sviluppo
+Se vuoi avviare l'ambiente di sviluppo (senza Nginx e con porte dirette):
+```bash
+docker-compose -f docker-compose-dev.yml up -d
+```
 
 L'applicazione sarà disponibile su `http://localhost:3010`.
 
@@ -49,11 +54,8 @@ docker-compose logs -f refs
 # Arrestare il servizio
 docker-compose down
 
-# Ricostruire l'immagine (dopo modifiche al codice)
+# Ricostruire l'immagine
 docker-compose build
-
-# Riavviare il servizio
-docker-compose restart refs
 ```
 
 ### Opzione 2: Installazione Locale
